@@ -1,10 +1,13 @@
-﻿namespace Mastermind
+﻿using Mastermind.GameCore;
+
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        // game initialization
+        MastermindGame game = new MastermindGame(args);
+
+        // start the game loop
+        game.Start();
     }
 }
