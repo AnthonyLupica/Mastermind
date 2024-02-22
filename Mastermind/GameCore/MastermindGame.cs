@@ -2,11 +2,13 @@
 using System;
 using System.Linq;
 
+using static Mastermind.Constants;
+
 namespace Mastermind.GameCore
 {
     internal class MastermindGame
     {
-        private const int _maxGuesses = Constants.Rules.GuessLimit;
+        private const int _maxGuesses = Rules.GuessLimit;
 
         private readonly string[] _args;
 
@@ -25,7 +27,7 @@ namespace Mastermind.GameCore
         /// </summary>
         internal void Start()
         {
-            Console.WriteLine(GameStrings.GameFlow_Introduction);
+            Console.WriteLine(GameStrings.GamePrint_Introduction);
 
             // Game loop
             while (true)
@@ -39,7 +41,7 @@ namespace Mastermind.GameCore
                 }
             }
 
-            Console.WriteLine(GameStrings.GameFlow_Exit);
+            Console.WriteLine(GameStrings.GamePrint_Exit);
         }
 
         private void StartRound(out bool shouldQuit)
@@ -53,6 +55,18 @@ namespace Mastermind.GameCore
             // Get new generated code for this round 
             _secretCode = new SecretCodeGenerator().SecretCode;
 
+            // Print the rules each round
+            string roundRules = string.Format(
+                    GameStrings.RoundPrint_Introduction,
+                    Rules.SecretLength,
+                    Rules.SecretCharSet[0],
+                    Rules.SecretCharSet[Rules.SecretCharSet.Length - 1],
+                    Rules.GuessLimit
+                );
+
+            Console.WriteLine(roundRules);
+
+            // Begin prompting the player
             while (!IsGameOver())
             {
                 // Prompt player for guess
@@ -96,14 +110,23 @@ namespace Mastermind.GameCore
                 throw new ArgumentException(GameStrings.Validation_EmptyGuess);
             }
 
-            if (guess.Trim().Length != Constants.Rules.SecretLength)
-            {
-                throw new ArgumentException(GameStrings.Validation_SecretLength);
-            }
-
             if (!guess.All(char.IsDigit))
             {
                 throw new ArgumentException(GameStrings.Validation_NonDigit);
+            }
+
+            if (guess.Trim().Length != Rules.SecretLength)
+            {
+                throw new ArgumentException(string.Format(GameStrings.Validation_SecretLength, Rules.SecretLength));
+            }
+
+            if (guess.Any(digit => !Rules.SecretCharSet.Contains(digit)))
+            {
+                throw new ArgumentException(string.Format(
+                        GameStrings.Validation_DigitNotInSecretCharSet,
+                        Rules.SecretCharSet[0],
+                        Rules.SecretCharSet[Rules.SecretCharSet.Length - 1]
+                    ));
             }
         }
 

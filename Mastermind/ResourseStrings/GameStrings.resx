@@ -117,32 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GameFlow_Exit" xml:space="preserve">
-    <value>Thanks for playing!!!</value>
+  <data name="GamePrint_Exit" xml:space="preserve">
+    <value>Thanks for playing!!!
+</value>
   </data>
-  <data name="GameFlow_Introduction" xml:space="preserve">
+  <data name="GamePrint_Introduction" xml:space="preserve">
     <value>Welcome to the "Mastermind Challenge", where your wits will be put to the test. 
 See if you can decipher my secret code before time runs out! 
-
-Enter 'h' at any time to view the rules menu, or 'q' to quit the game.
 </value>
   </data>
   <data name="Guess_Prompt" xml:space="preserve">
     <value>Guess {0} of {1}: </value>
   </data>
-  <data name="RoundFlow_Introduction" xml:space="preserve">
-    <value>@TODO write message for round start</value>
+  <data name="RoundPrint_Introduction" xml:space="preserve">
+    <value>I have generated a secret code which is:
+   - {0} numbers long
+   - Composed only of numbers in the range [{1}, {2}]
+
+Enter 'h' at any time to view the rules menu, or 'q' to quit the game.
+
+The question remains ... Can you break the code within {3} guesses? 
+
+
+</value>
+  </data>
+  <data name="Validation_DigitNotInSecretCharSet" xml:space="preserve">
+    <value>Your guess contains numbers that are out of range ... Recall the secet code contains only numbers in the range [{0}, {1}].
+</value>
   </data>
   <data name="Validation_EmptyGuess" xml:space="preserve">
-    <value>Your guess was empty ... you cannot run from the Mastermind!
+    <value>Your guess was empty ... You cannot run from the Mastermind!
 </value>
   </data>
   <data name="Validation_NonDigit" xml:space="preserve">
-    <value>Your guess contains non-digit characters ... you cannot fool the Mastermind so easily!
+    <value>Your guess contains non-digit characters ... You cannot fool the Mastermind so easily!
 </value>
   </data>
   <data name="Validation_SecretLength" xml:space="preserve">
-    <value>Your guess is not equal in length with the secret code I have generated ... your strategies require correction!
+    <value>Your guess is not equal in length with the secret code I have generated ... Recall the secret code is of length {0}.
 </value>
   </data>
 </root>

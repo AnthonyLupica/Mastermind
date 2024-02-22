@@ -61,24 +61,23 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thanks for playing!!!.
+        ///   Looks up a localized string similar to Thanks for playing!!!
+        ///.
         /// </summary>
-        internal static string GameFlow_Exit {
+        internal static string GamePrint_Exit {
             get {
-                return ResourceManager.GetString("GameFlow_Exit", resourceCulture);
+                return ResourceManager.GetString("GamePrint_Exit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Welcome to the &quot;Mastermind Challenge&quot;, where your wits will be put to the test. 
         ///See if you can decipher my secret code before time runs out! 
-        ///
-        ///Enter &apos;h&apos; at any time to view the rules menu, or &apos;q&apos; to quit the game.
         ///.
         /// </summary>
-        internal static string GameFlow_Introduction {
+        internal static string GamePrint_Introduction {
             get {
-                return ResourceManager.GetString("GameFlow_Introduction", resourceCulture);
+                return ResourceManager.GetString("GamePrint_Introduction", resourceCulture);
             }
         }
         
@@ -92,16 +91,35 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @TODO write message for round start.
+        ///   Looks up a localized string similar to I have generated a secret code which is:
+        ///   - {0} numbers long
+        ///   - Composed only of numbers in the range [{1}, {2}]
+        ///
+        ///Enter &apos;h&apos; at any time to view the rules menu, or &apos;q&apos; to quit the game.
+        ///
+        ///The question remains ... Can you break the code within {3} guesses? 
+        ///
+        ///
+        ///.
         /// </summary>
-        internal static string RoundFlow_Introduction {
+        internal static string RoundPrint_Introduction {
             get {
-                return ResourceManager.GetString("RoundFlow_Introduction", resourceCulture);
+                return ResourceManager.GetString("RoundPrint_Introduction", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess was empty ... you cannot run from the Mastermind!
+        ///   Looks up a localized string similar to Your guess contains numbers that are out of range ... Recall the secet code contains only numbers in the range [{0}, {1}].
+        ///.
+        /// </summary>
+        internal static string Validation_DigitNotInSecretCharSet {
+            get {
+                return ResourceManager.GetString("Validation_DigitNotInSecretCharSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your guess was empty ... You cannot run from the Mastermind!
         ///.
         /// </summary>
         internal static string Validation_EmptyGuess {
@@ -111,7 +129,7 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess contains non-digit characters ... you cannot fool the Mastermind so easily!
+        ///   Looks up a localized string similar to Your guess contains non-digit characters ... You cannot fool the Mastermind so easily!
         ///.
         /// </summary>
         internal static string Validation_NonDigit {
@@ -121,7 +139,7 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess is not equal in length with the secret code I have generated ... your strategies require correction!
+        ///   Looks up a localized string similar to Your guess is not equal in length with the secret code I have generated ... Recall the secret code is of length {0}.
         ///.
         /// </summary>
         internal static string Validation_SecretLength {
