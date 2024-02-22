@@ -63,18 +63,22 @@ namespace Mastermind.ResourseStrings {
         /// <summary>
         ///   Looks up a localized string similar to Thanks for playing!!!.
         /// </summary>
-        internal static string Exit {
+        internal static string GameFlow_Exit {
             get {
-                return ResourceManager.GetString("Exit", resourceCulture);
+                return ResourceManager.GetString("GameFlow_Exit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess of &apos;{0}&apos; is not a valid input..
+        ///   Looks up a localized string similar to Welcome to the &quot;Mastermind Challenge&quot;, where your wits will be put to the test. 
+        ///See if you can decipher my secret code before time runs out! 
+        ///
+        ///Enter &apos;h&apos; at any time to view the rules menu, or &apos;q&apos; to quit the game.
+        ///.
         /// </summary>
-        internal static string Guess_Invalid {
+        internal static string GameFlow_Introduction {
             get {
-                return ResourceManager.GetString("Guess_Invalid", resourceCulture);
+                return ResourceManager.GetString("GameFlow_Introduction", resourceCulture);
             }
         }
         
@@ -88,24 +92,41 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to the &quot;Mastermind Challenge&quot;, where your wits will be put to the test. 
-        ///See if you can decipher the secret code before time runs out! 
-        ///
-        ///Enter &apos;h&apos; at any time to view the rules menu, or &apos;q&apos; to quit the game.
-        ///.
+        ///   Looks up a localized string similar to @TODO write message for round start.
         /// </summary>
-        internal static string StartGame_Introduction {
+        internal static string RoundFlow_Introduction {
             get {
-                return ResourceManager.GetString("StartGame_Introduction", resourceCulture);
+                return ResourceManager.GetString("RoundFlow_Introduction", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @TODO write message for round start.
+        ///   Looks up a localized string similar to Your guess was empty ... you cannot run from the Mastermind!
+        ///.
         /// </summary>
-        internal static string StartRound_Introduction {
+        internal static string Validation_EmptyGuess {
             get {
-                return ResourceManager.GetString("StartRound_Introduction", resourceCulture);
+                return ResourceManager.GetString("Validation_EmptyGuess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your guess contains non-digit characters ... you cannot fool the Mastermind so easily!
+        ///.
+        /// </summary>
+        internal static string Validation_NonDigit {
+            get {
+                return ResourceManager.GetString("Validation_NonDigit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your guess is not equal in length with the secret code I have generated ... your strategies require correction!
+        ///.
+        /// </summary>
+        internal static string Validation_SecretLength {
+            get {
+                return ResourceManager.GetString("Validation_SecretLength", resourceCulture);
             }
         }
     }

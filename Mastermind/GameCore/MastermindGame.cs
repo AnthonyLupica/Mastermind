@@ -1,6 +1,6 @@
 ﻿using Mastermind.ResourseStrings;
 using System;
-using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace Mastermind.GameCore
 {
@@ -25,7 +25,7 @@ namespace Mastermind.GameCore
         /// </summary>
         internal void Start()
         {
-            Console.WriteLine(GameStrings.StartGame_Introduction);
+            Console.WriteLine(GameStrings.GameFlow_Introduction);
 
             // Game loop
             while (true)
@@ -39,7 +39,7 @@ namespace Mastermind.GameCore
                 }
             }
 
-            Console.WriteLine(GameStrings.Exit);
+            Console.WriteLine(GameStrings.GameFlow_Exit);
         }
 
         private void StartRound(out bool shouldQuit)
@@ -82,27 +82,32 @@ namespace Mastermind.GameCore
 
         private void ProcessGuess(string guess)
         {
-            if (!IsValidGuess(guess))
-            {
-                throw new ArgumentException(string.Format(GameStrings.Guess_Invalid, guess));
-            }
+            ValidateGuess(guess);
 
             _remainingGuesses--;
             
             // @TODO evaluate valid guess
         }
 
-        bool IsValidGuess(string guess)
+        private void ValidateGuess(string guess)
         {
-            if (string.IsNullOrWhiteSpace(guess) || Regex.IsMatch(guess, Constants.Regex.InvalidPlayerInput, RegexOptions.IgnoreCase))
+            if (string.IsNullOrWhiteSpace(guess))
             {
-                return false;
+                throw new ArgumentException(GameStrings.Validation_EmptyGuess);
             }
 
-            return true;
+            if (guess.Trim().Length != Constants.Rules.SecretLength)
+            {
+                throw new ArgumentException(GameStrings.Validation_SecretLength);
+            }
+
+            if (!guess.All(char.IsDigit))
+            {
+                throw new ArgumentException(GameStrings.Validation_NonDigit);
+            }
         }
 
-        bool IsGameOver()
+        private bool IsGameOver()
         {
             return _remainingGuesses == 0;
 

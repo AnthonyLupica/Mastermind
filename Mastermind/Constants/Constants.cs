@@ -2,12 +2,6 @@
 {
     internal static class Constants
     {
-        internal static class Regex
-        {
-            // matches non-numeric input that is not the (case-insensitive) letter q (quit) or h (help)
-            public const string InvalidPlayerInput = @"[^qh\d]";
-        }
-
         internal static class Rules 
         {
             // number of attempts the player has before game over

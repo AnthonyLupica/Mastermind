@@ -117,23 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Exit" xml:space="preserve">
+  <data name="GameFlow_Exit" xml:space="preserve">
     <value>Thanks for playing!!!</value>
   </data>
-  <data name="Guess_Invalid" xml:space="preserve">
-    <value>Your guess of '{0}' is not a valid input.</value>
-  </data>
-  <data name="Guess_Prompt" xml:space="preserve">
-    <value>Guess {0} of {1}: </value>
-  </data>
-  <data name="StartGame_Introduction" xml:space="preserve">
+  <data name="GameFlow_Introduction" xml:space="preserve">
     <value>Welcome to the "Mastermind Challenge", where your wits will be put to the test. 
-See if you can decipher the secret code before time runs out! 
+See if you can decipher my secret code before time runs out! 
 
 Enter 'h' at any time to view the rules menu, or 'q' to quit the game.
 </value>
   </data>
-  <data name="StartRound_Introduction" xml:space="preserve">
+  <data name="Guess_Prompt" xml:space="preserve">
+    <value>Guess {0} of {1}: </value>
+  </data>
+  <data name="RoundFlow_Introduction" xml:space="preserve">
     <value>@TODO write message for round start</value>
+  </data>
+  <data name="Validation_EmptyGuess" xml:space="preserve">
+    <value>Your guess was empty ... you cannot run from the Mastermind!
+</value>
+  </data>
+  <data name="Validation_NonDigit" xml:space="preserve">
+    <value>Your guess contains non-digit characters ... you cannot fool the Mastermind so easily!
+</value>
+  </data>
+  <data name="Validation_SecretLength" xml:space="preserve">
+    <value>Your guess is not equal in length with the secret code I have generated ... your strategies require correction!
+</value>
   </data>
 </root>
