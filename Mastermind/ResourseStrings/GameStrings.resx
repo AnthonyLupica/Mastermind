@@ -117,28 +117,51 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GamePrint_Exit" xml:space="preserve">
-    <value>Thanks for playing!!!
-</value>
-  </data>
-  <data name="GamePrint_Introduction" xml:space="preserve">
-    <value>Welcome to the "Mastermind Challenge", where your wits will be put to the test. 
-See if you can decipher my secret code before time runs out! 
+  <data name="Exit" xml:space="preserve">
+    <value>
+Thanks for playing!!!
 </value>
   </data>
   <data name="Guess_Prompt" xml:space="preserve">
     <value>Guess {0} of {1}: </value>
   </data>
-  <data name="RoundPrint_Introduction" xml:space="preserve">
-    <value>I have generated a secret code which is:
-   - {0} numbers long
+  <data name="Introduction" xml:space="preserve">
+    <value>Welcome to the "Mastermind Challenge", where your wits will be put to the test. 
+See if you can decipher my secret code before time runs out!
+
+ 
+</value>
+  </data>
+  <data name="KeepPlayingLost" xml:space="preserve">
+    <value>Try again? 
+Enter (N) to quit or any other key to give it another go with a new secret code: </value>
+  </data>
+  <data name="KeepPlayingWon" xml:space="preserve">
+    <value>I have rarely known defeat. It seems you are something of a mastermind yourself.
+Enter (N) to quit or any other key to continue playing:</value>
+  </data>
+  <data name="RoundStart" xml:space="preserve">
+    <value>I have generated a secret code which is:                                                  
+   - {0} digits long                                                                                    
    - Composed only of numbers in the range [{1}, {2}]
 
-Enter 'h' at any time to view the rules menu, or 'q' to quit the game.
+For each digit in your guess that matches the number and position
+of a digit in the secret code, my feedback includes one plus (+) sign. 
 
-The question remains ... Can you break the code within {3} guesses? 
+For each digit in your guess that matches the number but not the position
+of a digit in the secret code, my feedback includes one minus (-) sign.
 
+All (+'s) are scored for feedback in a guess before a single (-) is scored.
 
+Each digit comprising the secret code will only be used for scoring once per feedback.
+Ex) guess "2223" for a secret code of "3232" produces feedback "+--".
+      A '+' for the second "2" of the guess.
+      One minus for the "3"
+      Another minus for a "2"
+One "2" remains unscored as all "2"s of the secret code have already been used for scoring.
+                                                                                                                     
+One question remains ... Can you break the code within {3} guesses?
+   
 </value>
   </data>
   <data name="Validation_DigitNotInSecretCharSet" xml:space="preserve">

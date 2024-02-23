@@ -61,23 +61,13 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thanks for playing!!!
+        ///   Looks up a localized string similar to 
+        ///Thanks for playing!!!
         ///.
         /// </summary>
-        internal static string GamePrint_Exit {
+        internal static string Exit {
             get {
-                return ResourceManager.GetString("GamePrint_Exit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Welcome to the &quot;Mastermind Challenge&quot;, where your wits will be put to the test. 
-        ///See if you can decipher my secret code before time runs out! 
-        ///.
-        /// </summary>
-        internal static string GamePrint_Introduction {
-            get {
-                return ResourceManager.GetString("GamePrint_Introduction", resourceCulture);
+                return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
         
@@ -91,20 +81,52 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I have generated a secret code which is:
-        ///   - {0} numbers long
-        ///   - Composed only of numbers in the range [{1}, {2}]
+        ///   Looks up a localized string similar to Welcome to the &quot;Mastermind Challenge&quot;, where your wits will be put to the test. 
+        ///See if you can decipher my secret code before time runs out!
         ///
-        ///Enter &apos;h&apos; at any time to view the rules menu, or &apos;q&apos; to quit the game.
-        ///
-        ///The question remains ... Can you break the code within {3} guesses? 
-        ///
-        ///
+        /// 
         ///.
         /// </summary>
-        internal static string RoundPrint_Introduction {
+        internal static string Introduction {
             get {
-                return ResourceManager.GetString("RoundPrint_Introduction", resourceCulture);
+                return ResourceManager.GetString("Introduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try again? 
+        ///Enter (N) to quit or any other key to give it another go with a new secret code: .
+        /// </summary>
+        internal static string KeepPlayingLost {
+            get {
+                return ResourceManager.GetString("KeepPlayingLost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I have rarely known defeat. It seems you are something of a mastermind yourself.
+        ///Enter (N) to quit or any other key to continue playing:.
+        /// </summary>
+        internal static string KeepPlayingWon {
+            get {
+                return ResourceManager.GetString("KeepPlayingWon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I have generated a secret code which is:                                                  
+        ///   - {0} digits long                                                                                    
+        ///   - Composed only of numbers in the range [{1}, {2}]
+        ///
+        ///For each digit in your guess that matches the number and position
+        ///of a digit in the secret code, my feedback includes one plus (+) sign. 
+        ///
+        ///For each digit in your guess that matches the number but not the position
+        ///of a digit in the secret code, my feedba [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string RoundStart {
+            get {
+                return ResourceManager.GetString("RoundStart", resourceCulture);
             }
         }
         

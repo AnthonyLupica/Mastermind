@@ -2,12 +2,12 @@
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main()
     {
-        // game initialization
-        MastermindGame game = new MastermindGame(args);
+        // Game initialization
+        Game game = new Game();
 
-        // start the game loop
-        game.Start();
+        // Start the game loop
+        game.Play();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Mastermind
 {
-    internal static class Constants
+    internal static class AppSettings
     {
         internal static class Rules 
         {
