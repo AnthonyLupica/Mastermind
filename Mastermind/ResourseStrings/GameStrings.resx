@@ -122,28 +122,12 @@
 Thanks for playing!!!
 </value>
   </data>
-  <data name="Guess_Prompt" xml:space="preserve">
-    <value>Guess {0} of {1}: </value>
-  </data>
-  <data name="Introduction" xml:space="preserve">
-    <value>Welcome to the "Mastermind Challenge", where your wits will be put to the test. 
-See if you can decipher my secret code before time runs out!
-
- 
+  <data name="Feedback" xml:space="preserve">
+    <value>Feedback: {0}
 </value>
   </data>
-  <data name="KeepPlayingLost" xml:space="preserve">
-    <value>Try again? 
-Enter (N) to quit or any other key to give it another go with a new secret code: </value>
-  </data>
-  <data name="KeepPlayingWon" xml:space="preserve">
-    <value>I have rarely known defeat. It seems you are something of a mastermind yourself.
-Enter (N) to quit or any other key to continue playing:</value>
-  </data>
-  <data name="RoundStart" xml:space="preserve">
-    <value>I have generated a secret code which is:                                                  
-   - {0} digits long                                                                                    
-   - Composed only of numbers in the range [{1}, {2}]
+  <data name="Help" xml:space="preserve">
+    <value>
 
 For each digit in your guess that matches the number and position
 of a digit in the secret code, my feedback includes one plus (+) sign. 
@@ -159,25 +143,65 @@ Ex) guess "2223" for a secret code of "3232" produces feedback "+--".
       One minus for the "3"
       Another minus for a "2"
 One "2" remains unscored as all "2"s of the secret code have already been used for scoring.
+
+</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>Welcome to the "Mastermind Challenge", where your wits will be put to the test. 
+See if you can decipher my secret code before time runs out!
+</value>
+  </data>
+  <data name="KeepPlayingLost" xml:space="preserve">
+    <value>
+Try again? 
+Press (N) to quit or any other key to give it another go with a new secret code: </value>
+  </data>
+  <data name="KeepPlayingWon" xml:space="preserve">
+    <value>
+I have rarely known defeat. It seems you are something of a mastermind yourself.
+Press (N) to quit or any other key to continue playing:</value>
+  </data>
+  <data name="Prompt_AnyKeyContinue" xml:space="preserve">
+    <value>Press any key to continue ...  </value>
+  </data>
+  <data name="Prompt_Guess" xml:space="preserve">
+    <value>[Guess {0} of {1}] =&gt; </value>
+  </data>
+  <data name="Prompt_Help" xml:space="preserve">
+    <value>
+Need to see the rules? 
+Press (Y) to view them, or any other key to continue: </value>
+  </data>
+  <data name="RoundStart" xml:space="preserve">
+    <value>
+I have generated a new secret code which is:                                                  
+   - {0} digits long                                                                                    
+   - Composed only of numbers in the range [{1}, {2}]
                                                                                                                      
 One question remains ... Can you break the code within {3} guesses?
-   
+</value>
+  </data>
+  <data name="Validation_ConfirmGuessNotTaken" xml:space="preserve">
+    <value>No guess attempt has been expended.
 </value>
   </data>
   <data name="Validation_DigitNotInSecretCharSet" xml:space="preserve">
-    <value>Your guess contains numbers that are out of range ... Recall the secet code contains only numbers in the range [{0}, {1}].
-</value>
+    <value>Your guess contains numbers that are out of range ... Recall the secet code contains only numbers in the range [{0}, {1}].</value>
   </data>
   <data name="Validation_EmptyGuess" xml:space="preserve">
-    <value>Your guess was empty ... You cannot run from the Mastermind!
-</value>
+    <value>Your guess was empty ... You cannot run from the Mastermind!</value>
   </data>
   <data name="Validation_NonDigit" xml:space="preserve">
-    <value>Your guess contains non-digit characters ... You cannot fool the Mastermind so easily!
-</value>
+    <value>Your guess contains non-digit characters ... You cannot fool the Mastermind so easily!</value>
   </data>
   <data name="Validation_SecretLength" xml:space="preserve">
-    <value>Your guess is not equal in length with the secret code I have generated ... Recall the secret code is of length {0}.
-</value>
+    <value>Your guess is not equal in length with the secret code I have generated ... Recall the secret code is of length {0}.</value>
+  </data>
+  <data name="YouLose" xml:space="preserve">
+    <value>You lose :(
+The secret code was {0}</value>
+  </data>
+  <data name="YouSolvedIt" xml:space="preserve">
+    <value>You solved it!</value>
   </data>
 </root>

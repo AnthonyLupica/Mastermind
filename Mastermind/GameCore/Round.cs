@@ -6,12 +6,12 @@ using static Mastermind.AppSettings;
 
 namespace Mastermind.GameCore
 {
-    internal class GameRound
+    internal class Round
     {
         public string Secret { get; private set; }
         public int RemainingGuesses { get; private set; }
 
-        public GameRound()
+        public Round()
         {
             Secret = SecretCode.GenerateSecretCode();
             RemainingGuesses = Rules.GuessLimit;
@@ -31,12 +31,12 @@ namespace Mastermind.GameCore
 
             // Map each digit of the secret to the number of times it appears in the string
             Dictionary<char, int> AvailableSecretDigits = new Dictionary<char, int>();
-            
+
             // Track indices used for '+' score to avoid double counting when scoring for '-'
             HashSet<int> MatchedPositionIndices = new HashSet<int>();
 
-            foreach (char digit in Secret) 
-            { 
+            foreach (char digit in Secret)
+            {
                 if (AvailableSecretDigits.ContainsKey(digit))
                 {
                     ++AvailableSecretDigits[digit];
@@ -50,7 +50,7 @@ namespace Mastermind.GameCore
             // Score +'s first
             for (int i = 0; i < guess.Length; i++)
             {
-                if (AvailableSecretDigits[guess[i]] == 0)
+                if (!AvailableSecretDigits.ContainsKey(guess[i]) || AvailableSecretDigits[guess[i]] == 0)
                 {
                     continue;
                 }
@@ -69,7 +69,7 @@ namespace Mastermind.GameCore
             for (int i = 0; i < guess.Length; i++)
             {
                 // Check if there are any of this digit still available for score and avoid double counting
-                if (MatchedPositionIndices.Contains(i) || AvailableSecretDigits[guess[i]] == 0)
+                if (!AvailableSecretDigits.ContainsKey(guess[i]) || AvailableSecretDigits[guess[i]] == 0 || MatchedPositionIndices.Contains(i))
                 {
                     continue;
                 }

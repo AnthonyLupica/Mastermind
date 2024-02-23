@@ -72,19 +72,38 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Guess {0} of {1}: .
+        ///   Looks up a localized string similar to Feedback: {0}
+        ///.
         /// </summary>
-        internal static string Guess_Prompt {
+        internal static string Feedback {
             get {
-                return ResourceManager.GetString("Guess_Prompt", resourceCulture);
+                return ResourceManager.GetString("Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///
+        ///For each digit in your guess that matches the number and position
+        ///of a digit in the secret code, my feedback includes one plus (+) sign. 
+        ///
+        ///For each digit in your guess that matches the number but not the position
+        ///of a digit in the secret code, my feedback includes one minus (-) sign.
+        ///
+        ///All (+&apos;s) are scored for feedback in a guess before a single (-) is scored.
+        ///
+        ///Each digit comprising the secret code will only be used for scoring once per feedback.
+        ///Ex) guess &quot;2223&quot; for a secret code of &quot;3232&quot; prod [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Welcome to the &quot;Mastermind Challenge&quot;, where your wits will be put to the test. 
         ///See if you can decipher my secret code before time runs out!
-        ///
-        /// 
         ///.
         /// </summary>
         internal static string Introduction {
@@ -94,8 +113,9 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Try again? 
-        ///Enter (N) to quit or any other key to give it another go with a new secret code: .
+        ///   Looks up a localized string similar to 
+        ///Try again? 
+        ///Press (N) to quit or any other key to give it another go with a new secret code: .
         /// </summary>
         internal static string KeepPlayingLost {
             get {
@@ -104,8 +124,9 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I have rarely known defeat. It seems you are something of a mastermind yourself.
-        ///Enter (N) to quit or any other key to continue playing:.
+        ///   Looks up a localized string similar to 
+        ///I have rarely known defeat. It seems you are something of a mastermind yourself.
+        ///Press (N) to quit or any other key to continue playing:.
         /// </summary>
         internal static string KeepPlayingWon {
             get {
@@ -114,15 +135,42 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I have generated a secret code which is:                                                  
+        ///   Looks up a localized string similar to Press any key to continue ...  .
+        /// </summary>
+        internal static string Prompt_AnyKeyContinue {
+            get {
+                return ResourceManager.GetString("Prompt_AnyKeyContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Guess {0} of {1}] =&gt; .
+        /// </summary>
+        internal static string Prompt_Guess {
+            get {
+                return ResourceManager.GetString("Prompt_Guess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Need to see the rules? 
+        ///Press (Y) to view them, or any other key to continue: .
+        /// </summary>
+        internal static string Prompt_Help {
+            get {
+                return ResourceManager.GetString("Prompt_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///I have generated a new secret code which is:                                                  
         ///   - {0} digits long                                                                                    
         ///   - Composed only of numbers in the range [{1}, {2}]
-        ///
-        ///For each digit in your guess that matches the number and position
-        ///of a digit in the secret code, my feedback includes one plus (+) sign. 
-        ///
-        ///For each digit in your guess that matches the number but not the position
-        ///of a digit in the secret code, my feedba [rest of string was truncated]&quot;;.
+        ///                                                                                                                     
+        ///One question remains ... Can you break the code within {3} guesses?
+        ///.
         /// </summary>
         internal static string RoundStart {
             get {
@@ -131,8 +179,17 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess contains numbers that are out of range ... Recall the secet code contains only numbers in the range [{0}, {1}].
+        ///   Looks up a localized string similar to No guess attempt has been expended.
         ///.
+        /// </summary>
+        internal static string Validation_ConfirmGuessNotTaken {
+            get {
+                return ResourceManager.GetString("Validation_ConfirmGuessNotTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your guess contains numbers that are out of range ... Recall the secet code contains only numbers in the range [{0}, {1}]..
         /// </summary>
         internal static string Validation_DigitNotInSecretCharSet {
             get {
@@ -141,8 +198,7 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess was empty ... You cannot run from the Mastermind!
-        ///.
+        ///   Looks up a localized string similar to Your guess was empty ... You cannot run from the Mastermind!.
         /// </summary>
         internal static string Validation_EmptyGuess {
             get {
@@ -151,8 +207,7 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess contains non-digit characters ... You cannot fool the Mastermind so easily!
-        ///.
+        ///   Looks up a localized string similar to Your guess contains non-digit characters ... You cannot fool the Mastermind so easily!.
         /// </summary>
         internal static string Validation_NonDigit {
             get {
@@ -161,12 +216,30 @@ namespace Mastermind.ResourseStrings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your guess is not equal in length with the secret code I have generated ... Recall the secret code is of length {0}.
-        ///.
+        ///   Looks up a localized string similar to Your guess is not equal in length with the secret code I have generated ... Recall the secret code is of length {0}..
         /// </summary>
         internal static string Validation_SecretLength {
             get {
                 return ResourceManager.GetString("Validation_SecretLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You lose :(
+        ///The secret code was {0}.
+        /// </summary>
+        internal static string YouLose {
+            get {
+                return ResourceManager.GetString("YouLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You solved it!.
+        /// </summary>
+        internal static string YouSolvedIt {
+            get {
+                return ResourceManager.GetString("YouSolvedIt", resourceCulture);
             }
         }
     }
