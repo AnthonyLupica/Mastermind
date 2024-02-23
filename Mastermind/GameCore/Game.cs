@@ -1,4 +1,4 @@
-﻿using Mastermind.ResourseStrings;
+﻿using Mastermind.ResourceStrings;
 using System;
 using static Mastermind.AppSettings;
 
@@ -53,7 +53,7 @@ namespace Mastermind.GameCore
             Console.WriteLine(roundStart);
 
             bool playerGuessedCorrectly = false;
-            while (round.RemainingGuesses != 0)
+            while (round.RemainingGuesses > 0)
             {
                 Console.Write(string.Format(GameStrings.Prompt_Guess, (Rules.GuessLimit - round.RemainingGuesses) + 1, Rules.GuessLimit));
                 string guess = Console.ReadLine();

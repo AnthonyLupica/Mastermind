@@ -1,4 +1,4 @@
-﻿using Mastermind.ResourseStrings;
+﻿using Mastermind.ResourceStrings;
 using System;
 using System.Collections.Generic;
 using System.Linq;

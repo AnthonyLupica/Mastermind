@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="ResourseStrings\GameStrings.Designer.cs">
+    <Compile Update="ResourceStrings\GameStrings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>GameStrings.resx</DependentUpon>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ResourseStrings\GameStrings.resx">
+    <EmbeddedResource Update="ResourceStrings\GameStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GameStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
