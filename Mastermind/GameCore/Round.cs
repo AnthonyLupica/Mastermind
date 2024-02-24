@@ -30,28 +30,28 @@ namespace Mastermind.GameCore
             string minuses = "";
 
             // Map each digit of the secret to the number of times it appears in the string
-            Dictionary<char, int> AvailableSecretDigits = new Dictionary<char, int>();
+            Dictionary<char, int> availableSecretDigits = new Dictionary<char, int>();
 
             // Track indices used for '+' score to avoid double counting when scoring for '-'
-            HashSet<int> MatchedPositionIndices = new HashSet<int>();
+            HashSet<int> matchedPositionIndices = new HashSet<int>();
              
             // Populate Dictionary with frequency of each number in secret code
             foreach (char digit in Secret)
             {
-                if (AvailableSecretDigits.ContainsKey(digit))
+                if (availableSecretDigits.ContainsKey(digit))
                 {
-                    ++AvailableSecretDigits[digit];
+                    ++availableSecretDigits[digit];
                 }
                 else
                 {
-                    AvailableSecretDigits[digit] = 1;
+                    availableSecretDigits[digit] = 1;
                 }
             }
 
             // Score +'s first
             for (int i = 0; i < guess.Length; i++)
             {
-                if (!AvailableSecretDigits.TryGetValue(guess[i], out int count) || count == 0)
+                if (!availableSecretDigits.TryGetValue(guess[i], out int count) || count == 0)
                 {
                     // Guess digit isn't in the secret code or the code has no more "score uses" of this digit
                     continue;
@@ -62,15 +62,15 @@ namespace Mastermind.GameCore
                 {
                     // Append '+', consume one use of this digit's score potential, and track this index
                     pluses += '+';
-                    --AvailableSecretDigits[guess[i]];
-                    MatchedPositionIndices.Add(i);
+                    --availableSecretDigits[guess[i]];
+                    matchedPositionIndices.Add(i);
                 }
             }
 
             // Score -'s
             for (int i = 0; i < guess.Length; i++)
             {
-                if (!AvailableSecretDigits.TryGetValue(guess[i], out int count) || count == 0 || MatchedPositionIndices.Contains(i))
+                if (!availableSecretDigits.TryGetValue(guess[i], out int count) || count == 0 || matchedPositionIndices.Contains(i))
                 {
                     // Guess digit isn't in the secret code, the code has no more "score uses" of this digit, or this digit has already been scored with '+'
                     continue;
@@ -81,7 +81,7 @@ namespace Mastermind.GameCore
                 {
                     // Append '-' and consume one use of this digit's score potential
                     minuses += '-';
-                    --AvailableSecretDigits[guess[i]];
+                    --availableSecretDigits[guess[i]];
                 }
             }
 
