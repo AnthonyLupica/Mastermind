@@ -34,7 +34,8 @@ namespace Mastermind.GameCore
 
             // Track indices used for '+' score to avoid double counting when scoring for '-'
             HashSet<int> MatchedPositionIndices = new HashSet<int>();
-
+             
+            // Populate Dictionary with frequency of each number in secret code
             foreach (char digit in Secret)
             {
                 if (AvailableSecretDigits.ContainsKey(digit))
@@ -52,6 +53,7 @@ namespace Mastermind.GameCore
             {
                 if (!AvailableSecretDigits.TryGetValue(guess[i], out int count) || count == 0)
                 {
+                    // Guess digit isn't in the secret code or the code has no more "score uses" of this digit
                     continue;
                 }
 
@@ -68,9 +70,9 @@ namespace Mastermind.GameCore
             // Score -'s
             for (int i = 0; i < guess.Length; i++)
             {
-                // Check if there are any of this digit still available for score and avoid double counting
                 if (!AvailableSecretDigits.TryGetValue(guess[i], out int count) || count == 0 || MatchedPositionIndices.Contains(i))
                 {
+                    // Guess digit isn't in the secret code, the code has no more "score uses" of this digit, or this digit has already been scored with '+'
                     continue;
                 }
 

@@ -72,7 +72,7 @@ namespace Mastermind.GameCore
                 }
                 catch (Exception e)
                 {
-                    // Handle invalid guess attempt
+                    // Handle invalid guess
                     Console.WriteLine(e.Message);
                     Console.WriteLine(GameStrings.Validation_ConfirmGuessNotTaken);
 
