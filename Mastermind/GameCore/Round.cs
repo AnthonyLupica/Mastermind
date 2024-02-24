@@ -50,7 +50,7 @@ namespace Mastermind.GameCore
             // Score +'s first
             for (int i = 0; i < guess.Length; i++)
             {
-                if (!AvailableSecretDigits.ContainsKey(guess[i]) || AvailableSecretDigits[guess[i]] == 0)
+                if (!AvailableSecretDigits.TryGetValue(guess[i], out int count) || count == 0)
                 {
                     continue;
                 }
@@ -69,7 +69,7 @@ namespace Mastermind.GameCore
             for (int i = 0; i < guess.Length; i++)
             {
                 // Check if there are any of this digit still available for score and avoid double counting
-                if (!AvailableSecretDigits.ContainsKey(guess[i]) || AvailableSecretDigits[guess[i]] == 0 || MatchedPositionIndices.Contains(i))
+                if (!AvailableSecretDigits.TryGetValue(guess[i], out int count) || count == 0 || MatchedPositionIndices.Contains(i))
                 {
                     continue;
                 }
